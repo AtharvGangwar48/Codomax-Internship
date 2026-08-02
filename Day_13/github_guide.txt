@@ -1,0 +1,91 @@
+========================================================================
+             A BEGINNER'S GUIDE TO GIT & GITHUB (Day 13 Task)
+========================================================================
+Reference Repository: https://github.com/AtharvGangwar48/Codomax-Internship
+========================================================================
+
+------------------------------------------------------------------------
+1. WHAT ARE GIT AND GITHUB?
+------------------------------------------------------------------------
+* Git is a local Version Control System (VCS). It tracks changes in your
+  files over time, allowing you to view history, revert to previous 
+  states, and work on different features using branches without 
+  messing up the main codebase.
+
+* GitHub is a cloud-based hosting service for Git repositories. It 
+  provides a graphical interface and tools for collaboration, sharing 
+  code, pull requests, issue tracking, and automated workflows.
+
+------------------------------------------------------------------------
+2. HOW TO UPLOAD YOUR LOCAL PROJECT TO GITHUB
+------------------------------------------------------------------------
+Follow these step-by-step instructions to upload your "Codomax-Internship"
+project folder to your repository:
+
+STEP 1: Open your Terminal / Command Prompt and check your path.
+Navigate to your project root folder:
+  cd /Users/atharvgangwar/Desktop/Codomax-Internship
+
+STEP 2: Initialize a local Git repository.
+This creates a hidden '.git' directory inside your project to track changes:
+  git init
+
+STEP 3: Add your project files to the Git staging area.
+The dot (.) stages all files in the current folder:
+  git add .
+
+STEP 4: Save your changes to the local repository history.
+Commit the staged files with a descriptive message:
+  git commit -m "Initialize project and add Day 1 to Day 14 tasks"
+
+STEP 5: Set the main branch.
+Rename the default master branch to 'main' (standard practice on GitHub):
+  git branch -M main
+
+STEP 6: Link your local repository to your remote GitHub repository.
+Associate the remote URL with the alias 'origin':
+  git remote add origin https://github.com/AtharvGangwar48/Codomax-Internship.git
+
+STEP 7: Upload your commits to GitHub.
+Push the main branch to the 'origin' remote repository. The '-u' flag
+links the local main branch to the remote main branch for future pushes:
+  git push -u origin main
+
+------------------------------------------------------------------------
+3. ESSENTIAL DAILY GIT COMMANDS
+------------------------------------------------------------------------
+Once your repository is set up, use these commands to upload new changes:
+
+1. Check current changes and unstaged files:
+   git status
+
+2. Stage specific changes (or 'git add .' for all changes):
+   git add Day_13/github_guide.txt
+
+3. Commit changes to your history:
+   git commit -m "Add GitHub explanation text guide for Day 13"
+
+4. Push the new commit to GitHub:
+   git push
+
+5. Retrieve and merge remote changes from GitHub into your local folder:
+   git pull
+
+------------------------------------------------------------------------
+4. HANDLING AUTHENTICATION ISSUES
+------------------------------------------------------------------------
+When pushing code, GitHub may ask for authentication. Since password-based 
+authentication is deprecated, you must use one of the following:
+
+* Option A: Personal Access Tokens (PAT)
+  1. Go to GitHub -> Settings -> Developer Settings -> Personal Access Tokens.
+  2. Generate a classic token with 'repo' scope.
+  3. Copy the token and paste it as your password in the terminal when prompted.
+
+* Option B: SSH Keys (Recommended)
+  1. Generate an SSH key: ssh-keygen -t ed25519 -C "your_email@example.com"
+  2. Add the key to your GitHub account (Settings -> SSH and GPG keys).
+  3. Change remote URL to SSH: 
+     git remote set-url origin git@github.com:AtharvGangwar48/Codomax-Internship.git
+  4. Push securely without passwords.
+========================================================================
